@@ -1,0 +1,271 @@
+	{
+	"info": {
+		"_postman_id": "192181e0-e853-4f90-94a1-16238c77a6ff",
+		"name": "Musée",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all museums",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3605a6d1-2dac-4f42-9690-99448d896cdc",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/musees",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"musees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all museums in region",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dea1f0b8-8e31-4366-8a2e-e1e0eece7f6f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/musees?region=Bretagne",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"musees"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "Bretagne"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a museum by its name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "060fb510-a914-4b26-b297-55500d9fda8e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/musees/musée d'Orsay",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"musees",
+						"musée d'Orsay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add or remove a museum from favorites",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "060fb510-a914-4b26-b297-55500d9fda8f",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/musees/musée d'Orsay",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"musees",
+						"musée d'Orsay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create museum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c63db861-ca0f-4796-a5a5-bd7e161c852e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nom\": \"Boulaboula\",\n    \"id\": \"M030303\",\n \"url\": \"souris.fr\",\n   \"telephone\": \"02 30 20 49 22\",\n \"date_appellation\": \"2002-01-06\",\n \"favori\": true,\n \"region\": \"Le sud frère\",\n \"departement\": \"Paris\",\n \"adresse\": \"2, rue Bidart\",\n \"longitude\": 0.69,\n \"latitude\": 4.20\n}"
+				},
+				"url": {
+					"raw": "{{url}}/musees",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"musees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a museum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "784af9ce-f54d-48ff-90d6-1cb96e63494d",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/musees/musée d'Orsay",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"musees",
+						"musée d'Orsay"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
