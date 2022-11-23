@@ -64,15 +64,15 @@ __decorate([
     __metadata("design:returntype", Object)
 ], MuseeController.prototype, "getAllMuseums", null);
 __decorate([
-    (0, common_1.Get)(':nom_officiel_du_musee'),
-    __param(0, (0, common_1.Param)('nom_officiel_du_musee')),
+    (0, common_1.Get)(':nom'),
+    __param(0, (0, common_1.Param)('nom')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Object)
 ], MuseeController.prototype, "getMuseum", null);
 __decorate([
-    (0, common_1.Put)(':nom_officiel_du_musee'),
-    __param(0, (0, common_1.Param)('nom_officiel_du_musee')),
+    (0, common_1.Put)(':nom'),
+    __param(0, (0, common_1.Param)('nom')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)

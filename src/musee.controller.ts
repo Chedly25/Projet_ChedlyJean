@@ -26,8 +26,8 @@ export class MuseeController {
         );
     }
 
-    @Get(':nom_officiel_du_musee')
-    getMuseum(@Param('nom_officiel_du_musee')name: string): Musee {
+    @Get(':nom')
+    getMuseum(@Param('nom')name: string): Musee {
         return this.museeService.getMuseum(name);
     }
 
@@ -45,8 +45,8 @@ export class MuseeController {
 
     }
 
-    @Put(':nom_officiel_du_musee')
-    addOrRemoveFromFavorite(@Param('nom_officiel_du_musee') name : string) {
+    @Put(':nom')
+    addOrRemoveFromFavorite(@Param('nom') name : string) {
         this.museeService.addOrRemoveFromFavorite(name);
     }
 
