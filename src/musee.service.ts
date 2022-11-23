@@ -6,7 +6,6 @@ import { workerData } from "worker_threads";
 import { HttpService } from "@nestjs/axios";
 import { Observable } from "rxjs";
 import {AxiosResponse} from "axios";
-import { ApiMusee } from "./ApiMusee";
 import { map, tap } from "rxjs";
 //import { BookDto } from "./DTO/Book.dto";
 
