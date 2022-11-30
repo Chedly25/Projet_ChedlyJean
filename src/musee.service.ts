@@ -41,6 +41,7 @@ export class MuseeService implements OnModuleInit {
                     longitude: bibou[i]["fields"].longitude,
                     latitude : bibou[i]["fields"].latitude})
             }
+            console.log((this.musees))
             return bou;
         } catch (err) {
             console.log(err);
@@ -48,7 +49,6 @@ export class MuseeService implements OnModuleInit {
     }
 
     getAllMuseums() : Musee[] {
-        console.log("boubou")
         return this.musees.sort((book1, book2) =>
             book1.region.toLowerCase().localeCompare(book2.region.toLowerCase()),
         )
