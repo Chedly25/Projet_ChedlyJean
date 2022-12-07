@@ -32,11 +32,6 @@ export class MuseeController {
         return this.museeService.getMuseum(name);
     }
 
-    /*@Get(':region')
-    getMuseumsIn(@Param('region')region: string): Musee[] {
-        return this.museeService.getMuseumsIn(region)
-    }**/
-
     getTotalNumberOfMusees(): number {
         return this.museeService.getTotalNumberOfMusees();
     }

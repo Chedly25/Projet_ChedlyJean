@@ -22,24 +22,24 @@ export class MuseeService implements OnModuleInit {
 
     private async loadMuseumFromFile(): Promise<void>{
         try {
-            var bibou: Musee[]
+            var loaded: Musee[]
             const data = await readFile('./src/liste-et-localisation-des-musees-de-france.json', 'utf8');
-            const bou = (bibou = JSON.parse(data))
+            const bou = (loaded = JSON.parse(data))
 
-            for (var i = 0; i < bibou.length; i++) {
+            for (var i = 0; i < loaded.length; i++) {
                 this.musees.push({
-                    nom : bibou[i]["fields"].nom_officiel_du_musee,
-                    id: bibou[i]["fields"].identifiant_museofile,
-                    url: bibou[i]["fields"].url,
-                    telephone: bibou[i]["fields"].telephone,
-                    date_appellation: bibou[i]["fields"].date_appellation,
+                    nom : loaded[i]["fields"].nom_officiel_du_musee,
+                    id: loaded[i]["fields"].identifiant_museofile,
+                    url: loaded[i]["fields"].url,
+                    telephone: loaded[i]["fields"].telephone,
+                    date_appellation: loaded[i]["fields"].date_appellation,
                     favori: false,
-                    region: bibou[i]["fields"].region_administrative,
-                    departement: bibou[i]["fields"].departement,
-                    adresse: bibou[i]["fields"].adresse,
-                    lieu: bibou[i]["fields"].lieu,
-                    longitude: bibou[i]["fields"].longitude,
-                    latitude : bibou[i]["fields"].latitude})
+                    region: loaded[i]["fields"].region_administrative,
+                    departement: loaded[i]["fields"].departement,
+                    adresse: loaded[i]["fields"].adresse,
+                    lieu: loaded[i]["fields"].lieu,
+                    longitude: loaded[i]["fields"].longitude,
+                    latitude : loaded[i]["fields"].latitude})
             }
             console.log((this.musees))
             return bou;
@@ -49,8 +49,8 @@ export class MuseeService implements OnModuleInit {
     }
 
     getAllMuseums() : Musee[] {
-        return this.musees.sort((book1, book2) =>
-            book1.region.toLowerCase().localeCompare(book2.region.toLowerCase()),
+        return this.musees.sort((museum1, museum2) =>
+            museum1.region.toLowerCase().localeCompare(museum2.region.toLowerCase()),
         )
     }
 
@@ -64,7 +64,7 @@ export class MuseeService implements OnModuleInit {
     getMuseum(name: string): Musee {
             const musee = this.musees.find((museum) => museum.nom === name);
             if (!musee) {
-                throw new Error(`No book with title ${name}`);
+                throw new Error(`No museum with name ${name}`);
             }
             return musee;
     }

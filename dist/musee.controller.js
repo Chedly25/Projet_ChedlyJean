@@ -29,7 +29,7 @@ let MuseeController = class MuseeController {
         if (region) {
             return this.museeService.getMuseumsIn(region);
         }
-        return this.paginationService.paginatedData(this.museeService.getAllMuseums(), page, size);
+        return this.museeService.getAllMuseums();
     }
     getMuseum(name) {
         return this.museeService.getMuseum(name);
